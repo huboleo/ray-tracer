@@ -1,4 +1,3 @@
-#include <iostream>
 #include <print>
 
 int main() {
@@ -10,7 +9,7 @@ int main() {
     std::println("255");
 
     for (size_t j = 0; j < image_height; j++) {
-        std::print(std::clog, "\rScanlines remaining: {:<5}", image_height - j);
+        std::print(stderr, "\rScanlines remaining: {:<5}", image_height - j);
         for (size_t i = 0; i < image_width; i++) {
             auto r = double(i) / (image_width - 1);
             auto g = double(j) / (image_height - 1);
@@ -23,5 +22,5 @@ int main() {
             std::println("{} {} {}", ir, ig, ib);
         }
     }
-    std::println(std::clog, "\rDone.                   ");
+    std::println(stderr, "\rDone.                   ");
 }
